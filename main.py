@@ -48,7 +48,7 @@ async def chat(update: Update, context: ContextTypes.DEFAULT_TYPE):
             image_url = response['data'][0]['url']
             await update.message.reply_photo(photo=image_url, caption="এই নাও তোমার চাওয়া মতো ছবি!")
         except Exception as e:
-            await update.message.reply_text("দুঃখিত, ছবি বানাতে সমস্যা হচ্ছে...")
+            await update.message.reply_text(f"দুঃখিত, ছবি বানাতে সমস্যা হচ্ছে... {str(e)}")
         return
 
     # না হলে GPT চ্যাটিং
@@ -58,13 +58,15 @@ async def chat(update: Update, context: ContextTypes.DEFAULT_TYPE):
         prompt = f"The following is a helpful AI conversation with a user named {user_name}:\n\n{user_message}"
 
     try:
-        response = openai.ChatCompletion.create(
-            model="gpt-3.5-turbo",
-            messages=[{"role": "user", "content": prompt}]
+        # নতুন API অনুযায়ী কোড আপডেট
+        response = openai.Completion.create(
+            model="text-davinci-003",  # OpenAI-এর নতুন মডেল ব্যবহার করুন, যদি GPT-3.5 না হয়
+            prompt=prompt,
+            max_tokens=150
         )
-        reply_text = response['choices'][0]['message']['content']
+        reply_text = response.choices[0].text.strip() if response.choices else "দুঃখিত, উত্তর দিতে সমস্যা হচ্ছে।"
     except Exception as e:
-        reply_text = "দুঃখিত, উত্তর দিতে সমস্যা হচ্ছে।"
+        reply_text = f"দুঃখিত, উত্তর দিতে সমস্যা হচ্ছে। ত্রুটি: {str(e)}"
 
     await update.message.reply_text(reply_text)
 
