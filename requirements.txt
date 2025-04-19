@@ -1,0 +1,7 @@
+python-telegram-bot==13.15
+transformers
+diffusers
+torch
+torchvision
+safetensors
+python-dotenv
