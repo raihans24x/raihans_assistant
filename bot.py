@@ -9,6 +9,8 @@ from image_gen import generate_image
 
 # ✅ ঠিক করলাম এখানে
 TOKEN = os.getenv("TELEGRAM_TOKEN")
+print("Loaded TOKEN:", TOKEN)
+
 
 # Logging
 logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
