@@ -1,11 +1,4 @@
 python-telegram-bot==13.15
-python-3.10.13
 transformers
-diffusers
 torch
-torchvision
-safetensors
 python-dotenv
-huggingface_hub
-hf_xet
-accelerate
