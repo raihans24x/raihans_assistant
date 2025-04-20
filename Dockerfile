@@ -13,3 +13,7 @@ CMD ["python", "bot.py"]
 # Install necessary dependencies
 RUN pip install huggingface_hub[hf_xet]
 RUN pip install accelerate
+
+COPY requirements.txt .
+RUN pip install --upgrade pip
+RUN pip install -r requirements.txt
