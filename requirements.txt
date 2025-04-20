@@ -5,6 +5,5 @@ torch
 torchvision
 safetensors
 python-dotenv
-huggingface_hub[hf_xet]
+pip install huggingface_hub[hf_xet]
 accelerate
-
