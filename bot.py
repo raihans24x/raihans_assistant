@@ -9,7 +9,10 @@ from image_gen import generate_image
 
 # ✅ ঠিক করলাম এখানে
 TOKEN = os.getenv("TELEGRAM_TOKEN")
-print("Loaded TOKEN:", TOKEN)
+
+print("🚀 Starting RayhanBot...")
+print("🔐 TOKEN LOADED:", TOKEN)
+
 
 
 # Logging
