@@ -9,3 +9,7 @@ COPY . /app
 RUN pip install --no-cache-dir -r requirements.txt
 
 CMD ["python", "bot.py"]
+
+# Install necessary dependencies
+RUN pip install huggingface_hub[hf_xet]
+RUN pip install accelerate
