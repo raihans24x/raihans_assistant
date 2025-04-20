@@ -1,5 +1,3 @@
-# bot.py
-
 import os
 from dotenv import load_dotenv
 load_dotenv()
@@ -9,7 +7,7 @@ import logging
 from generate import generate_text
 from image_gen import generate_image
 
-# Token from .env
+# ✅ ঠিক করলাম এখানে
 TOKEN = os.getenv("TELEGRAM_TOKEN")
 
 # Logging
