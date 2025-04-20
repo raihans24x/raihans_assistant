@@ -1,3 +1,5 @@
+# bot.py
+
 import os
 from dotenv import load_dotenv
 load_dotenv()
@@ -7,13 +9,8 @@ import logging
 from generate import generate_text
 from image_gen import generate_image
 
-# ✅ ঠিক করলাম এখানে
+# Token from .env
 TOKEN = os.getenv("TELEGRAM_TOKEN")
-
-print("🚀 Starting RayhanBot...")
-print("🔐 TOKEN LOADED:", TOKEN)
-
-
 
 # Logging
 logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
