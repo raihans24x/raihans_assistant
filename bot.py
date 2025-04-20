@@ -10,7 +10,7 @@ from generate import generate_text
 from image_gen import generate_image
 
 # Token from .env
-TOKEN = os.getenv("BOT_TOKEN")
+TOKEN = os.getenv("TELEGRAM_TOKEN")
 
 # Logging
 logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
