@@ -8,3 +8,5 @@ python-dotenv
 hf_xet
 huggingface_hub[hf_xet]
 accelerate
+updater.start_polling()
+updater.idle()
